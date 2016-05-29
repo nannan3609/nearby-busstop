@@ -1,0 +1,160 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+$baseColor:blue;
+//基础颜色
+$roadColor:darkblue;
+//站名颜色
+$bgColor:#ccc;
+//背景颜色
+$borderColor:cornflowerblue;
+//边框颜色
+$dotColor:red;
+//点颜色
+$stopColor:lightcoral;
+//下一周颜色
+$fontColor:white;
+//字体颜色
+$baseFont:16px;
+//字体基础大小
+body {
+    overflow-x: hidden;
+    font-size: $baseFont;
+}
+
+.look {
+    width: 450px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+//站牌外观
+@mixin location($position, $lnum, $tnum) {
+    position: $position;
+    left: $lnum;
+    top: $tnum;
+}
+
+//定位
+@mixin marginloc($lnum, $tnum) {
+    margin-left: $lnum;
+    margin-top: $tnum;
+}
+
+//margin
+.cut {
+    width: 435px;
+    height: 0;
+    border: 10px solid $baseColor;
+    border-left-color: $baseColor;
+    border-right-color: transparent;
+    border-top-color: transparent;
+}
+
+//剪切图形
+.container {
+    width: 500px;
+    height: 700px;
+    background-color: $bgColor;
+    margin: 0 auto;
+    .place {
+        @extend .look;
+        height: 50px;
+        margin: 0 auto;
+        .road {
+            font-size: $baseFont *9/8;
+            color: $roadColor;
+            text-align: center;
+        }
+        .enroad {
+            font-size: $baseFont;
+            color: $bgColor;
+            @extend .road;
+        }
+    }
+    .top {
+        @extend .look;
+        height: 320px;
+        margin: 10px auto;
+        h1 {
+            display: inline-block;
+        }
+        .introduce {
+            display: inline-block;
+            @include marginloc(5px, 0);
+        }
+        .state {
+            float: right;
+        }
+        .time {
+            font-size: $baseFont/8*6;
+        }
+        .reddot {
+            font-size: $baseFont/16*11;
+            color: $dotColor;
+        }
+        .next {
+            @include marginloc(15px, 0);
+            color: $borderColor;
+        }
+        .nextstop {
+            color: $stopColor;
+            @include marginloc(10px, 0);
+        }
+        .stop {
+            width: 400px;
+            height: 200px;
+            @include marginloc(25px, 0);
+            span {
+                float: left;
+                width: 14px;
+                height: 176px;
+                font-size: $baseFont/8*7;
+                @include marginloc(4px, 10px);
+            }
+            .redborder {
+                border: 1px solid $dotColor;
+            }
+        }
+        .dot {
+            width: 14px;
+            height: 14px;
+            background-color: $dotColor;
+            border-radius: 50%;
+            float: left;
+        }
+        .direction {
+            @include marginloc(5px, 0);
+            .arrow {
+                @extend .cut;
+                border-bottom: 0;
+                @include location(relative, 425px, 10px);
+            }
+            .arrowdown {
+                @extend .cut;
+                border-left: 0;
+            }
+        }
+        .price {
+            width: 440px;
+            height: 30px;
+            @include marginloc(5px, 5px);
+            background-color: $baseColor;
+            color: $fontColor;
+            .ic {
+                float: left;
+                @include marginloc(5px, 0);
+            }
+            .timesince {
+                float: right;
+                margin-right: 5px;
+            }
+        }
+    }
+    hr {
+        width: 75px;
+        border: 0.5px solid $borderColor;
+    }
+}

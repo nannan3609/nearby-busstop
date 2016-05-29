@@ -1,0 +1,107 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+body {
+  overflow-x: hidden;
+  font-size: 16px; }
+
+.look, .container .place, .container .top {
+  width: 450px;
+  background-color: white;
+  border-radius: 10px; }
+
+.cut, .container .top .direction .arrow, .container .top .direction .arrowdown {
+  width: 435px;
+  height: 0;
+  border: 10px solid blue;
+  border-left-color: blue;
+  border-right-color: transparent;
+  border-top-color: transparent; }
+
+.container {
+  width: 500px;
+  height: 700px;
+  background-color: #ccc;
+  margin: 0 auto; }
+  .container .place {
+    height: 50px;
+    margin: 0 auto; }
+    .container .place .road, .container .place .enroad {
+      font-size: 18px;
+      color: darkblue;
+      text-align: center; }
+    .container .place .enroad {
+      font-size: 16px;
+      color: #ccc; }
+  .container .top {
+    height: 320px;
+    margin: 10px auto; }
+    .container .top h1 {
+      display: inline-block; }
+    .container .top .introduce {
+      display: inline-block;
+      margin-left: 5px;
+      margin-top: 0; }
+    .container .top .state {
+      float: right; }
+    .container .top .time {
+      font-size: 12px; }
+    .container .top .reddot {
+      font-size: 11px;
+      color: red; }
+    .container .top .next {
+      margin-left: 15px;
+      margin-top: 0;
+      color: cornflowerblue; }
+    .container .top .nextstop {
+      color: lightcoral;
+      margin-left: 10px;
+      margin-top: 0; }
+    .container .top .stop {
+      width: 400px;
+      height: 200px;
+      margin-left: 25px;
+      margin-top: 0; }
+      .container .top .stop span {
+        float: left;
+        width: 14px;
+        height: 176px;
+        font-size: 14px;
+        margin-left: 4px;
+        margin-top: 10px; }
+      .container .top .stop .redborder {
+        border: 1px solid red; }
+    .container .top .dot {
+      width: 14px;
+      height: 14px;
+      background-color: red;
+      border-radius: 50%;
+      float: left; }
+    .container .top .direction {
+      margin-left: 5px;
+      margin-top: 0; }
+      .container .top .direction .arrow {
+        border-bottom: 0;
+        position: relative;
+        left: 425px;
+        top: 10px; }
+      .container .top .direction .arrowdown {
+        border-left: 0; }
+    .container .top .price {
+      width: 440px;
+      height: 30px;
+      margin-left: 5px;
+      margin-top: 5px;
+      background-color: blue;
+      color: white; }
+      .container .top .price .ic {
+        float: left;
+        margin-left: 5px;
+        margin-top: 0; }
+      .container .top .price .timesince {
+        float: right;
+        margin-right: 5px; }
+  .container hr {
+    width: 75px;
+    border: 0.5px solid cornflowerblue; }
